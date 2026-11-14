@@ -1,0 +1,9 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Deny access until application-specific authorization rules are implemented.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

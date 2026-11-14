@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.npm-cache/
+out/
+build/
+coverage/
+.env*
+!.env.example
+.firebase/
+*.log
+*.tsbuildinfo
+.DS_Store
