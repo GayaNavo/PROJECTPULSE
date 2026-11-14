@@ -9,6 +9,10 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },
+  "overrides": {
+    "@firebase/app": "0.16.6",
+    "@grpc/grpc-js": "1.14.7"
+  },
   "dependencies": {
     "firebase": "^12.19.0",
     "next": "latest",

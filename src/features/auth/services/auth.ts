@@ -1,5 +1,5 @@
 import {
-  createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
   type UserCredential,
@@ -10,8 +10,8 @@ export function signIn(email: string, password: string): Promise<UserCredential>
   return signInWithEmailAndPassword(getFirebaseAuth(), email, password);
 }
 
-export function register(email: string, password: string): Promise<UserCredential> {
-  return createUserWithEmailAndPassword(getFirebaseAuth(), email, password);
+export function requestPasswordReset(email: string): Promise<void> {
+  return sendPasswordResetEmail(getFirebaseAuth(), email);
 }
 
 export function signOutUser(): Promise<void> {

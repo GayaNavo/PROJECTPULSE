@@ -1,11 +1,5 @@
 import Link from "next/link";
 
-const highlights = [
-  { label: "Projects in motion", value: "12", detail: "Across 4 teams" },
-  { label: "Tasks completed", value: "78%", detail: "This quarter" },
-  { label: "Items needing attention", value: "3", detail: "Review recommended" },
-];
-
 export default function Home() {
   return (
     <main className="mx-auto min-h-screen max-w-6xl px-6 py-12 sm:px-10">
@@ -40,12 +34,15 @@ export default function Home() {
         </Link>
       </section>
 
-      <section aria-label="Workspace overview" className="grid gap-4 sm:grid-cols-3">
-        {highlights.map((item) => (
-          <article key={item.label} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <p className="text-sm font-medium text-slate-500">{item.label}</p>
-            <p className="mt-4 text-3xl font-semibold tracking-tight">{item.value}</p>
-            <p className="mt-2 text-sm text-slate-500">{item.detail}</p>
+      <section aria-label="Platform capabilities" className="grid gap-4 sm:grid-cols-3">
+        {[
+          { title: "Project visibility", description: "See project ownership, status, deadlines, and current delivery work together." },
+          { title: "Clear accountability", description: "Organize tasks and checklists inside the project they belong to." },
+          { title: "Executive context", description: "Keep project questions, updates, and decisions in a shared discussion." },
+        ].map((item) => (
+          <article key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <p className="font-semibold text-slate-900">{item.title}</p>
+            <p className="mt-2 text-sm leading-6 text-slate-500">{item.description}</p>
           </article>
         ))}
       </section>
